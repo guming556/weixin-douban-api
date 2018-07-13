@@ -1,4 +1,4 @@
-<scroll-view>
+<scroll-view scroll-y="true" style="height: 4000rpx;" bindscrolltoupper="upper" bindscrolltolower="lower">
 <block wx:for="{{films}}" wx:key="unique">
   <view class='content' data-id='{{item.id}}' bindtap='details'>
     <view class='content-left'>
