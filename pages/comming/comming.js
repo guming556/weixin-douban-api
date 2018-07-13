@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    films: null
+    films: null,
+    page:0,
+    newFilms:null
   },
 
   /**
@@ -29,12 +31,30 @@ Page({
       url: '../details/details?id=' + res.currentTarget.dataset.id,
     })
   },
+  lower:function() {
+    this.setData({page:this.data.page+1});
+    var that = this;
+    wx.request({
+      url: 'http://47.106.92.153/comming.php?page='+that.data.page,
+      success:function(res){
+        console.log(res.data);
+        that.newFilms = that.data.films;
+        for(var i=0;i<res.data.length;i++){
+          that.newFilms = that.newFilms.concat(res.data[i]);
+        }
+        that.setData({films:that.newFilms});
+      }
+    })
+  },
+  upper:function() {
+    console.log('upper');
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+      
   },
 
   /**
