@@ -1,0 +1,18 @@
+<!--pages/details/details.wxml-->
+<scroll-view>
+  <view class='content'>
+    <view class='content-left'>
+      <image src='{{film.thumb}}'></image>    
+    </view>
+    <view class='content-right'>
+      <view><text class='title'>{{film.title}}</text><text class='year'>{{film.year}}</text></view>
+      <view><text>评分：</text><text class='score'>{{film.score}}</text></view>
+      <view><text>导演：{{film.directors}}</text></view>
+      <view><text>演员：{{film.actors}}</text></view>
+    </view> 
+  </view>
+  <view class='details'>
+    <view class='details-title'>剧情介绍：</view>
+    <view class='details-content'>{{film.summary}}</view>
+  </view>
+</scroll-view>

@@ -1,0 +1,16 @@
+<!--pages/comming/comming.wxml-->
+<scroll-view>
+<block wx:for="{{films}}" wx:key="unique">
+  <view class='content' data-id='{{item.id}}' bindtap='details'>
+    <view class='content-left'>
+      <image src='{{item.thumb}}'></image>    
+    </view>
+    <view class='content-right'>
+      <view><text class='title'>{{item.title}}</text><text class='year'>{{item.year}}</text></view>
+      <view><text>评分：</text><text class='score'>{{item.score}}</text></view>
+      <view><text>导演：{{item.directors}}</text></view>
+      <view><text>演员：{{item.actors}}</text></view>
+    </view> 
+  </view>
+  </block>
+</scroll-view>
